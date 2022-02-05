@@ -2,75 +2,70 @@
   <div>
     <div
       v-bind:class="currentColor"
-      class="fixed inset-0 bg-gradient-to-br p-4"
+      class="fixed inset-0 p-4 bg-gradient-to-br"
     ></div>
 
     <div
-      class="
-        fixed
-        left-0
-        top-8
-        z-10
-        hidden
-        sm:flex
-        w-full
-        items-center
-        justify-center
-      "
+      class="fixed left-0 z-10 items-center justify-center hidden w-full  top-8 sm:flex"
     >
       <div
         v-bind:class="currentColor2"
-        class="opacity-100 h-3 w-40 rounded-full"
+        class="w-40 h-3 rounded-full opacity-100"
       ></div>
     </div>
 
     <div
       id="page_wrapper"
-      class="
-        fixed
-        lg:left-4 lg:right-4 lg:top-4 lg:bottom-4
-        sm:left-2 sm:top-2 sm:right-2 sm:bottom-2
-        left-1
-        top-1
-        right-1
-        bottom-1
-        bg-gray-100
-        dark:bg-gray-900
-        p-4
-        rounded-xl
-        overflow-y-scroll
-      "
+      class="fixed p-4 overflow-y-scroll bg-gray-100  lg:left-4 lg:right-4 lg:top-4 lg:bottom-4 sm:left-2 sm:top-2 sm:right-2 sm:bottom-2 left-1 top-1 right-1 bottom-1 dark:bg-gray-900 rounded-xl"
     >
-      <div class="flex flex-col justify-center items-center">
+      <div class="flex flex-col items-center justify-center">
         <div
-          class="
-            w-full
-            max-w-6xl
-            mt-0
-            lg:mt-32
-            sm:mt-16
-            flex flex-col
-            sm:flex-row
-            space-4
-            justify-center
-            sm:items-between sm:justify-between
-            items-center
-            space-x-4
-          "
+          class="flex flex-col items-center justify-center w-full max-w-6xl mt-0 space-x-4  lg:mt-32 sm:mt-16 sm:flex-row space-4 sm:items-between sm:justify-between"
         >
+          <div class="flex mb-4 space-x-4 sm:mb-0">
+            <button
+              @click="onToggleDar()"
+              v-if="isDark"
+              class="p-2 text-gray-600 bg-gray-200 rounded-full  dark:bg-gray-800 hover:text-gray-900 dark:text-gray-100 dark:hover:text-gray-400"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                />
+              </svg>
+            </button>
+
+            <button
+              class="p-2 text-gray-600 bg-gray-200 rounded-full  dark:bg-gray-800 hover:text-gray-900 dark:text-gray-100 dark:hover:text-gray-400"
+              @click="onToggleDar()"
+              v-if="!isDark"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                />
+              </svg>
+            </button>
+          </div>
+
           <div class="flex space-x-4">
             <svg
               @click="goTo(gitHubUrl)"
-              class="
-                w-5
-                h-5
-                text-gray-400
-                dark:text-gray-600
-                cursor-pointer
-                hover:text-yellow-400
-                transition
-                duration-300
-              "
+              class="w-5 h-5 text-gray-400 transition duration-300 cursor-pointer  dark:text-gray-600 hover:text-yellow-400 dark:hover:text-yellow-400"
               fill="currentColor"
               role="img"
               viewBox="0 0 24 24"
@@ -84,16 +79,7 @@
 
             <svg
               @click="goTo(messengerUrl)"
-              class="
-                w-5
-                h-5
-                text-gray-400
-                dark:text-gray-600
-                cursor-pointer
-                hover:text-yellow-400
-                transition
-                duration-300
-              "
+              class="w-5 h-5 text-gray-400 transition duration-300 cursor-pointer  dark:text-gray-600 hover:text-yellow-400 dark:hover:text-yellow-400"
               fill="currentColor"
               role="img"
               xmlns="http://www.w3.org/2000/svg"
@@ -107,16 +93,7 @@
 
             <svg
               @click="goTo(whatsappUrl)"
-              class="
-                w-5
-                h-5
-                text-gray-400
-                dark:text-gray-600
-                cursor-pointer
-                hover:text-yellow-400
-                transition
-                duration-300
-              "
+              class="w-5 h-5 text-gray-400 transition duration-300 cursor-pointer  dark:text-gray-600 hover:text-yellow-400 dark:hover:text-yellow-400"
               fill="currentColor"
               role="img"
               viewBox="0 0 24 24"
@@ -130,16 +107,7 @@
 
             <svg
               @click="goTo(discordUrl)"
-              class="
-                w-5
-                h-5
-                text-gray-400
-                dark:text-gray-600
-                cursor-pointer
-                hover:text-yellow-400
-                transition
-                duration-300
-              "
+              class="w-5 h-5 text-gray-400 transition duration-300 cursor-pointer  dark:text-gray-600 hover:text-yellow-400 dark:hover:text-yellow-400"
               fill="currentColor"
               role="img"
               viewBox="0 0 24 24"
@@ -153,16 +121,7 @@
 
             <svg
               @click="goTo(igUrl)"
-              class="
-                w-5
-                h-5
-                text-gray-400
-                dark:text-gray-600
-                cursor-pointer
-                hover:text-yellow-400
-                transition
-                duration-300
-              "
+              class="w-5 h-5 text-gray-400 transition duration-300 cursor-pointer  dark:text-gray-600 hover:text-yellow-400 dark:hover:text-yellow-400"
               fill="currentColor"
               role="img"
               viewBox="0 0 24 24"
@@ -176,16 +135,7 @@
 
             <svg
               @click="goTo(fbUrl)"
-              class="
-                w-5
-                h-5
-                text-gray-400
-                dark:text-gray-600
-                cursor-pointer
-                hover:text-yellow-400
-                transition
-                duration-300
-              "
+              class="w-5 h-5 text-gray-400 transition duration-300 cursor-pointer  dark:text-gray-600 hover:text-yellow-400 dark:hover:text-yellow-400"
               fill="currentColor"
               role="img"
               xmlns="http://www.w3.org/2000/svg"
@@ -198,34 +148,17 @@
             </svg>
           </div>
         </div>
-        <div class="w-full max-w-6xl mt-4 flex" id="intro">
+        <div class="flex w-full max-w-6xl mt-4" id="intro">
           <div
-            class="
-              w-full
-              bg-white
-              dark:bg-gray-800
-              p-8
-              sm:p-4
-              rounded-lg
-              flex
-              space-x-0
-              sm:space-x-8
-            "
+            class="flex w-full p-8 space-x-0 bg-white rounded-lg  dark:bg-gray-800 sm:p-4 sm:space-x-8"
           >
-            <div class="hidden static sm:block">
-              <div class="cursor-pointer group rounded-lg w-40 h-50 relative">
+            <div class="static hidden sm:block">
+              <div class="relative w-40 rounded-lg cursor-pointer group h-50">
                 <img src="/photo2.png" class="w-full rounded-lg" alt="" />
-                <div class="absolute left-0 top-0">
+                <div class="absolute top-0 left-0">
                   <img
                     src="/photo.png"
-                    class="
-                      group-hover:opacity-100
-                      opacity-0
-                      w-full
-                      rounded-lg
-                      transition
-                      duration-300
-                    "
+                    class="w-full transition duration-300 rounded-lg opacity-0  group-hover:opacity-100"
                     alt=""
                   />
                 </div>
@@ -233,116 +166,47 @@
             </div>
 
             <div
-              class="
-                w-full
-                flex flex-col
-                lg:flex-row
-                justify-between
-                items-center
-              "
+              class="flex flex-col items-center justify-between w-full  lg:flex-row"
             >
               <div
-                class="
-                  w-full
-                  lg:w-max
-                  h-full
-                  flex flex-col
-                  items-center
-                  sm:items-start
-                  justify-center
-                  space-y-6
-                  sm:space-y-3
-                "
+                class="flex flex-col items-center justify-center w-full h-full space-y-6  lg:w-max sm:items-start sm:space-y-3"
               >
                 <h1
-                  class="
-                    font-bold
-                    text-5xl text-black
-                    dark:text-gray-50
-                    mt-0
-                    sm:mt-0
-                    text-center
-                    sm:text-left
-                  "
+                  class="mt-0 text-5xl font-bold text-center text-black  dark:text-gray-50 sm:mt-0 sm:text-left"
                 >
                   <span class="inline text-yellow-400">Matej </span>
                   <span class="inline text-yellow-400">Bačo </span>
                   <span class="hidden sm:inline">👋</span>
                 </h1>
                 <h2
-                  class="
-                    mb-4
-                    sm:mb-0
-                    mt-6
-                    sm:mt-0
-                    font-semibold
-                    text-2xl text-gray-400 text-center
-                    sm:text-left
-                  "
+                  class="mt-6 mb-4 text-2xl font-semibold text-center text-gray-400  sm:mb-0 sm:mt-0 sm:text-left"
                 >
-                  <span class="dark:text-white text-gray-900 font-bold"
+                  <span class="font-bold text-gray-900 dark:text-white"
                     >Open-minded</span
                   >
                   website developer.
                 </h2>
 
-                <!-- <p class="cursor-pointer text-yellow-300 font-bold">
+                <!-- <p class="font-bold text-yellow-300 cursor-pointer">
               Make a payment
             </p> -->
               </div>
 
               <div
-                class="
-                  w-full
-                  lg:w-max
-                  flex
-                  justify-center
-                  items-center
-                  sm:items-start
-                  lg:items-end
-                  flex-col
-                  space-y-2
-                  h-full
-                  py-3
-                  lg:px-2
-                  mt-6
-                  sm:mt-2
-                "
+                class="flex flex-col items-center justify-center w-full h-full py-3 mt-6 space-y-2  lg:w-max sm:items-start lg:items-end lg:px-2 sm:mt-2"
               >
                 <div
-                  class="group cursor-pointer flex justify-start lg:justify-end"
+                  class="flex justify-start cursor-pointer group lg:justify-end"
                 >
                   <div
                     @click="onDownloadCV()"
                     style="width: fit-content"
-                    class="
-                      lg:float-right
-                      flex
-                      dark:bg-gray-900
-                      bg-gray-50
-                      text-gray-500
-                      group-hover:bg-yellow-400
-                      font-bold
-                      text-xl
-                      group-hover:text-white
-                      rounded-lg
-                      p-2
-                      transition
-                      duration-300
-                    "
+                    class="flex p-2 text-xl font-bold text-gray-500 transition duration-300 rounded-lg  lg:float-right dark:bg-gray-900 bg-gray-50 group-hover:bg-yellow-400 group-hover:text-white"
                   >
                     Download CV
 
                     <svg
-                      class="
-                        ml-3
-                        text-gray-500
-                        w-6
-                        h-6
-                        group-hover:text-white
-                        transition
-                        duration-300
-                      "
+                      class="w-6 h-6 ml-3 text-gray-500 transition duration-300  group-hover:text-white"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"
                       fill="currentColor"
@@ -357,45 +221,17 @@
                 </div>
 
                 <div
-                  class="
-                    cursor-pointer
-                    group
-                    cursor-pointerflex
-                    justify-start
-                    lg:justify-end
-                  "
+                  class="justify-start cursor-pointer  group cursor-pointerflex lg:justify-end"
                 >
                   <div
                     @click="onPrintCV()"
                     style="width: fit-content"
-                    class="
-                      lg:float-right
-                      flex
-                      dark:bg-gray-900
-                      bg-gray-50
-                      text-gray-500
-                      group-hover:bg-yellow-100
-                      font-bold
-                      text-xl
-                      group-hover:text-yellow-400
-                      rounded-lg
-                      p-2
-                      transition
-                      duration-300
-                    "
+                    class="flex p-2 text-xl font-bold text-gray-500 transition duration-300 rounded-lg  lg:float-right dark:bg-gray-900 bg-gray-50 group-hover:bg-yellow-100 group-hover:text-yellow-400"
                   >
                     Print CV
 
                     <svg
-                      class="
-                        ml-3
-                        text-gray-500
-                        w-6
-                        h-6
-                        group-hover:text-yellow-400
-                        transition
-                        duration-300
-                      "
+                      class="w-6 h-6 ml-3 text-gray-500 transition duration-300  group-hover:text-yellow-400"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"
                       fill="currentColor"
@@ -414,8 +250,8 @@
         </div>
       </div>
 
-      <div class="flex justify-center items-center">
-        <div class="w-full max-w-6xl mt-4 grid gap-y-4">
+      <div class="flex items-center justify-center">
+        <div class="grid w-full max-w-6xl mt-4 gap-y-4">
           <core-portfolio-row
             :isOpened="currentlyOpened === 'skills'"
             v-on:activate="onOpenSection($event)"
@@ -428,10 +264,10 @@
             title="Skills Portfolio"
             iconD="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
           >
-            <div class="grid grid-cols-12 w-full gap-x-0 lg:gap-x-6 gap-y-6">
+            <div class="grid w-full grid-cols-12 gap-x-0 lg:gap-x-6 gap-y-6">
               <div class="col-span-12 xl:col-span-8">
                 <div class="max-w-xs">
-                  <h1 class="font-bold text-xl text-black dark:text-gray-50">
+                  <h1 class="text-xl font-bold text-black dark:text-gray-50">
                     I prepare
                     <span class="text-pink-500">modern websites</span> from the
                     first line of the code. Every website I build is using
@@ -446,12 +282,12 @@
                   </h1>
                 </div>
 
-                <div class="grid grid-cols-12 mt-8 gap-6">
+                <div class="grid grid-cols-12 gap-6 mt-8">
                   <div
-                    class="col-span-12 md:col-span-6 flex flex-col space-y-8"
+                    class="flex flex-col col-span-12 space-y-8 md:col-span-6"
                   >
                     <div
-                      class="bg-gray-100 dark:bg-gray-900 p-6 rounded-lg"
+                      class="p-6 bg-gray-100 rounded-lg dark:bg-gray-900"
                       v-for="(stackItem, stackableInex) of stackItemsLeft"
                       :key="stackableInex"
                     >
@@ -459,85 +295,44 @@
                         v-bind:class="
                           stackItem.isSpecial ? 'bg-pink-500' : 'bg-blue-400'
                         "
-                        class="
-                          w-full
-                          h-20
-                          rounded-lg
-                          flex
-                          items-center
-                          justify-center
-                        "
+                        class="flex items-center justify-center w-full h-20 rounded-lg "
                         v-html="stackItem.iconSvg"
                       ></div>
 
-                      <div class="w-full flex flex-col mt-6 space-y-4">
+                      <div class="flex flex-col w-full mt-6 space-y-4">
                         <span
-                          class="
-                            text-black
-                            dark:text-gray-100
-                            font-bold
-                            text-2xl
-                          "
+                          class="text-2xl font-bold text-black  dark:text-gray-100"
                           >{{ stackItem.title }}</span
                         >
 
                         <span
-                          class="
-                            text-gray-600
-                            dark:text-gray-400
-                            font-semibold
-                            text-lg
-                          "
+                          class="text-lg font-semibold text-gray-600  dark:text-gray-400"
                           >{{ stackItem.text }}</span
                         >
                       </div>
                     </div>
                   </div>
                   <div
-                    class="
-                      col-span-12
-                      md:col-span-6
-                      flex flex-col
-                      space-y-8
-                      md:-mt-32
-                    "
+                    class="flex flex-col col-span-12 space-y-8  md:col-span-6 md:-mt-32"
                   >
                     <div
-                      class="bg-gray-100 dark:bg-gray-900 p-6 rounded-lg"
+                      class="p-6 bg-gray-100 rounded-lg dark:bg-gray-900"
                       v-for="(stackItem, index) of stackItemsRight"
                       :key="index"
                     >
                       <div
-                        class="
-                          w-full
-                          h-20
-                          rounded-lg
-                          bg-blue-400
-                          flex
-                          items-center
-                          justify-center
-                        "
+                        class="flex items-center justify-center w-full h-20 bg-blue-400 rounded-lg "
                         v-html="stackItem.iconSvg"
                       ></div>
 
-                      <div class="w-full flex flex-col mt-6 space-y-4">
+                      <div class="flex flex-col w-full mt-6 space-y-4">
                         <span
-                          class="
-                            text-black
-                            dark:text-gray-100
-                            font-bold
-                            text-2xl
-                          "
+                          class="text-2xl font-bold text-black  dark:text-gray-100"
                           >{{ stackItem.title }}</span
                         >
 
                         <span
-                          class="
-                            text-gray-600
-                            dark:text-gray-400
-                            font-semibold
-                            text-lg
-                          "
+                          class="text-lg font-semibold text-gray-600  dark:text-gray-400"
                           >{{ stackItem.text }}</span
                         >
                       </div>
@@ -546,21 +341,15 @@
                 </div>
               </div>
               <div
-                class="
-                  col-span-12
-                  xl:col-span-4
-                  grid grid-cols-12
-                  w-full
-                  gap-y-8
-                "
+                class="grid w-full grid-cols-12 col-span-12  xl:col-span-4 gap-y-8"
                 style="height: fit-content"
               >
                 <div class="col-span-12 md:col-span-6 xl:col-span-12">
-                  <h1 class="font-bold text-xl text-black dark:text-gray-50">
+                  <h1 class="text-xl font-bold text-black dark:text-gray-50">
                     Coding skills:
                   </h1>
 
-                  <div class="flex flex-col space-y-4 mt-4">
+                  <div class="flex flex-col mt-4 space-y-4">
                     <div
                       class="flex space-x-3"
                       v-for="(codingSkill, index) of codingSkills"
@@ -586,12 +375,7 @@
                         </svg>
                       </div>
                       <span
-                        class="
-                          text-gray-600
-                          dark:text-gray-300
-                          font-bold
-                          text-xl
-                        "
+                        class="text-xl font-bold text-gray-600  dark:text-gray-300"
                       >
                         {{ codingSkill.name }}
                       </span>
@@ -600,11 +384,11 @@
                 </div>
 
                 <div class="col-span-12 md:col-span-6 xl:col-span-12">
-                  <h1 class="font-bold text-xl text-black dark:text-gray-50">
+                  <h1 class="text-xl font-bold text-black dark:text-gray-50">
                     Technologies:
                   </h1>
 
-                  <div class="flex flex-col space-y-4 mt-4">
+                  <div class="flex flex-col mt-4 space-y-4">
                     <div
                       class="flex space-x-3"
                       v-for="(technologiesSkill, index) of technologiesSkills"
@@ -632,12 +416,7 @@
                         </svg>
                       </div>
                       <span
-                        class="
-                          text-gray-600
-                          dark:text-gray-300
-                          font-bold
-                          text-xl
-                        "
+                        class="text-xl font-bold text-gray-600  dark:text-gray-300"
                       >
                         {{ technologiesSkill.name }}
                       </span>
@@ -646,11 +425,11 @@
                 </div>
 
                 <div class="col-span-12 md:col-span-6 xl:col-span-12">
-                  <h1 class="font-bold text-xl text-black dark:text-gray-50">
+                  <h1 class="text-xl font-bold text-black dark:text-gray-50">
                     Language skills:
                   </h1>
 
-                  <div class="flex flex-col space-y-4 mt-4">
+                  <div class="flex flex-col mt-4 space-y-4">
                     <div
                       class="flex space-x-3"
                       v-for="(langSkill, index) of langSkills"
@@ -678,12 +457,7 @@
                         </svg>
                       </div>
                       <span
-                        class="
-                          text-gray-600
-                          dark:text-gray-300
-                          font-bold
-                          text-xl
-                        "
+                        class="text-xl font-bold text-gray-600  dark:text-gray-300"
                       >
                         {{ langSkill.name }}
                       </span>
@@ -706,27 +480,19 @@
             title="Successful Projects"
             iconD="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"
           >
-            <h1 class="font-bold text-xl text-black dark:text-gray-50">
+            <h1 class="text-xl font-bold text-black dark:text-gray-50">
               With more than
               <span class="text-green-400">20 finished projects</span> over one
               year of frelanding, I am a strong developer ready to bring my
               skill set into every project.
             </h1>
 
-            <div class="mt-8 grid grid-cols-12 gap-6">
+            <div class="grid grid-cols-12 gap-6 mt-8">
               <div
                 v-for="(project, i) of projects"
                 :key="i"
                 v-bind:class="project.grid"
-                class="
-                  cursor-pointer
-                  group
-                  relative
-                  rounded-lg
-                  h-80
-                  p-2
-                  bg-green-400
-                "
+                class="relative p-2 bg-green-400 rounded-lg cursor-pointer  group h-80"
                 @click="onOpenGallery(i)"
               >
                 <div
@@ -739,25 +505,13 @@
 
                 <div
                   style="background-color: rgba(0, 0, 0, 0.7)"
-                  class="
-                    rounded-lg
-                    group-hover:opacity-100
-                    opacity-0
-                    absolute
-                    inset-0
-                    flex flex-col
-                    justify-center
-                    items-center
-                    transition
-                    duration-300
-                    p-6
-                  "
+                  class="absolute inset-0 flex flex-col items-center justify-center p-6 transition duration-300 rounded-lg opacity-0  group-hover:opacity-100"
                 >
-                  <h3 class="font-bold text-white text-2xl text-center">
+                  <h3 class="text-2xl font-bold text-center text-white">
                     {{ project.name }}
                   </h3>
                   <p
-                    class="mt-3 font-semibold text-gray-100 text-md text-center"
+                    class="mt-3 font-semibold text-center text-gray-100 text-md"
                   >
                     {{ project.description }}
                   </p>
@@ -778,67 +532,36 @@
             title="Client Reviews"
             iconD="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
           >
-            <h1 class="font-bold text-xl text-black dark:text-gray-50">
+            <h1 class="text-xl font-bold text-black dark:text-gray-50">
               Here's what some <span class="text-indigo-400">companies</span> I
               worked with as freelancer have to say about my work.
             </h1>
 
-            <div class="mt-8 flex space-y-16 sm:space-y-8 flex-col">
+            <div class="flex flex-col mt-8 space-y-16 sm:space-y-8">
               <div
-                class="
-                  flex
-                  space-x-0
-                  sm:space-x-8
-                  flex-col
-                  sm:flex-row
-                  items-center
-                  justify-center
-                  sm:items-start sm:justify-start
-                "
+                class="flex flex-col items-center justify-center space-x-0  sm:space-x-8 sm:flex-row sm:items-start sm:justify-start"
                 v-for="(review, index) of reviews"
                 :key="index"
               >
-                <img :src="review.image" class="rounded-lg w-40" alt="" />
+                <img :src="review.image" class="w-40 rounded-lg" alt="" />
                 <div>
                   <h1
-                    class="
-                      font-bold
-                      text-black
-                      dark:text-gray-50
-                      text-3xl
-                      mt-6
-                      sm:mt-0
-                      text-center
-                      sm:text-left
-                    "
+                    class="mt-6 text-3xl font-bold text-center text-black  dark:text-gray-50 sm:mt-0 sm:text-left"
                   >
                     {{ review.name }}
                   </h1>
                   <h3
-                    class="
-                      font-bold
-                      text-xl text-indigo-400 text-center
-                      sm:text-left
-                    "
+                    class="text-xl font-bold text-center text-indigo-400  sm:text-left"
                   >
                     {{ review.company }}
                   </h3>
 
                   <div
-                    class="
-                      hidden
-                      sm:block
-                      mt-2
-                      w-40
-                      h-1
-                      rounded-full
-                      dark:bg-gray-700
-                      bg-gray-200
-                    "
+                    class="hidden w-40 h-1 mt-2 bg-gray-200 rounded-full  sm:block dark:bg-gray-700"
                   ></div>
 
                   <p
-                    class="font-semibold mt-2 text-lg text-center sm:text-left"
+                    class="mt-2 text-lg font-semibold text-center sm:text-left"
                   >
                     {{ review.text }}
                   </p>
@@ -859,30 +582,30 @@
             title="Contact me"
             iconD="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"
           >
-            <h1 class="font-bold text-xl text-black dark:text-gray-50">
+            <h1 class="text-xl font-bold text-black dark:text-gray-50">
               Contact me if you have any questions. I will be more than happy to
               get in touch with you.
             </h1>
-            <p class="font-bold text-gray-500 dark:text-gray-500 mt-6">
+            <p class="mt-6 font-bold text-gray-500 dark:text-gray-500">
               <span class="mr-1">E-mail:</span>
               <a
                 :href="'mailto:' + contactEmail"
-                class="cursor-pointer text-red-400"
+                class="text-red-400 cursor-pointer"
               >
                 {{ contactEmail }}
               </a>
             </p>
-            <p class="font-bold text-gray-500 dark:text-gray-500 mt-2">
+            <p class="mt-2 font-bold text-gray-500 dark:text-gray-500">
               <span class="mr-1">Phone number:</span>
               <a
                 :href="'tel:' + contactTelPlain"
-                class="cursor-pointer text-red-400"
+                class="text-red-400 cursor-pointer"
               >
                 {{ constactTel }}
               </a>
             </p>
 
-            <h1 class="font-bold text-xl text-black dark:text-gray-50 mt-6">
+            <h1 class="mt-6 text-xl font-bold text-black dark:text-gray-50">
               One quick form stands between
               <span class="text-red-400">you</span> and
               <span class="text-red-400">me</span>.
@@ -895,18 +618,7 @@
             >
               <input
                 required=""
-                class="
-                  bg-transparent
-                  border-4
-                  dark:border-gray-600
-                  border-gray-200
-                  rounded-xl
-                  col-span-12
-                  md:col-span-6
-                  focus:outline-none focus:ring-0 focus:border-red-400
-                  font-bold
-                  p-6
-                "
+                class="col-span-12 p-6 font-bold bg-transparent border-4 border-gray-200  dark:border-gray-600 rounded-xl md:col-span-6 focus:outline-none focus:ring-0 focus:border-red-400"
                 placeholder="Your name"
                 type="text"
                 name="name"
@@ -914,18 +626,7 @@
 
               <input
                 required=""
-                class="
-                  bg-transparent
-                  border-4
-                  dark:border-gray-600
-                  border-gray-200
-                  rounded-xl
-                  col-span-12
-                  md:col-span-6
-                  focus:outline-none focus:ring-0 focus:border-red-400
-                  font-bold
-                  p-6
-                "
+                class="col-span-12 p-6 font-bold bg-transparent border-4 border-gray-200  dark:border-gray-600 rounded-xl md:col-span-6 focus:outline-none focus:ring-0 focus:border-red-400"
                 placeholder="Your e-mail"
                 type="email"
                 name="email"
@@ -934,38 +635,17 @@
               <textarea
                 required=""
                 style="resize: none"
-                class="
-                  bg-transparent
-                  border-4
-                  dark:border-gray-600
-                  border-gray-200
-                  rounded-xl
-                  col-span-12
-                  md:col-span-12
-                  focus:outline-none focus:ring-0 focus:border-red-400
-                  font-bold
-                  p-6
-                "
+                class="col-span-12 p-6 font-bold bg-transparent border-4 border-gray-200  dark:border-gray-600 rounded-xl md:col-span-12 focus:outline-none focus:ring-0 focus:border-red-400"
                 placeholder="Your message"
                 rows="10"
                 name="message"
               ></textarea>
 
-              <div class="hidden md:block col-span-6"></div>
+              <div class="hidden col-span-6 md:block"></div>
 
               <button
                 type="submit"
-                class="
-                  col-span-12
-                  md:col-span-6
-                  rounded-lg
-                  hover:bg-red-500
-                  bg-red-400
-                  text-white
-                  p-6
-                  font-bold
-                  text-xl
-                "
+                class="col-span-12 p-6 text-xl font-bold text-white bg-red-400 rounded-lg  md:col-span-6 hover:bg-red-500"
               >
                 Submit
               </button>
@@ -976,14 +656,7 @@
 
       <div class="flex items-center justify-center">
         <div
-          class="
-            w-full
-            max-w-6xl
-            mt-4
-            font-bold
-            text-center text-gray-500
-            dark:text-gray-500
-          "
+          class="w-full max-w-6xl mt-4 font-bold text-center text-gray-500  dark:text-gray-500"
         >
           v1.0.0 &copy; {{ currentYear }}, Matej Bačo. All Rights Reserved.
         </div>
@@ -1001,6 +674,8 @@ declare const PhotoSwipe: any
 export default Vue.extend({
   data() {
     return {
+      isDark: true,
+
       formSpreeKey: 'xrgjpobb',
       fbUrl: 'https://www.facebook.com/matejbaco2000',
       messengerUrl: 'https://m.me/102386341636067',
@@ -1397,6 +1072,10 @@ export default Vue.extend({
     }
   },
   methods: {
+    onToggleDar() {
+      this.isDark = !this.isDark
+      this.syncDarkness()
+    },
     onDownloadCV() {
       const link = document.createElement('a')
       link.download = 'CV_Matej_Baco.pdf'
@@ -1541,6 +1220,16 @@ export default Vue.extend({
       )
       gallery.init()
     },
+    syncDarkness() {
+      if (this.isDark) {
+        document.body.classList.add('dark')
+      } else {
+        document.body.classList.remove('dark')
+      }
+    },
+  },
+  created() {
+    this.syncDarkness()
   },
 })
 </script>
